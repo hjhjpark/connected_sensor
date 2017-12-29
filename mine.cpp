@@ -14,7 +14,7 @@ void mine::setapikey(String apikey) {
 
 }
 
-boolean Sogang::send(int pm25, int pm10) {
+boolean mine::send(int pm25, int pm10) {
   WiFiClient client;
   if (!client.connect(_host, _httpPort)) {
     Serial.print("connection failed: ");
