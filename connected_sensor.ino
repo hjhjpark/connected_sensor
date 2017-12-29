@@ -17,6 +17,9 @@ ThingSpeak ts("0D0HNYXTWO10M27Q"); // with no key, no data will be stored.
 #include "Sogang.h"
 Sogang sg; 
 
+#include "mine.h"
+mine mn;
+
 #include <SoftwareSerial.h>
 SoftwareSerial dustport(D1, D0, false, 256);  //RX, TX
 
@@ -72,6 +75,7 @@ void do_interval() {
   me.send(int(pm25s.getMedian()), int(pm10s.getMedian()));
   ts.send(int(pm25s.getMedian()), int(pm10s.getMedian()));
   sg.send(int(pm25s.getMedian()), int(pm10s.getMedian()));
+  mn.send(int(pm25s.getMedian()), int(pm10s.getMedian()));
 }
 
 unsigned long mark = 0, sec_mark = 0;
